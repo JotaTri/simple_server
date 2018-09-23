@@ -6,6 +6,9 @@ app = Flask(__name__)
 @app.route('/home', methods=['GET', 'POST'])
 def server():
     if request.method == 'POST':
+        print(request.data)
+        for header in request.headers:
+            print(header)
         return request.data
     else:
         return request.method
